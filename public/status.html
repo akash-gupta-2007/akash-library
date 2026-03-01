@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status - Akash Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-book-reader"></i>
+                <span>Akash Library</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fas fa-users"></i> Students</a></li>
+                <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+                <li><a href="status.html" class="active"><i class="fas fa-list"></i> Status</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Allocation Status</h1>
+            <p>View All Book Allocations and Returns</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Filter Tabs -->
+        <section class="filter-tabs">
+            <button class="tab-btn active" data-filter="all"><i class="fas fa-list"></i> All</button>
+            <button class="tab-btn" data-filter="active"><i class="fas fa-hourglass-half"></i> Active</button>
+            <button class="tab-btn" data-filter="returned"><i class="fas fa-check-circle"></i> Returned</button>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-section">
+            <input type="text" id="searchStatus" placeholder="Search by student name, book title, or enrollment ID..." class="search-input">
+        </section>
+
+        <!-- Status Table -->
+        <section class="list-section">
+            <h2><i class="fas fa-file-invoice"></i> Book Allocation Records</h2>
+            <div class="table-responsive">
+                <table id="statusTable">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Enrollment ID</th>
+                            <th>Book Title</th>
+                            <th>ISBN</th>
+                            <th>Issued Date</th>
+                            <th>Due Date</th>
+                            <th>Returned Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statusTableBody">
+                        <tr><td colspan="9" class="text-center">Loading allocations...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Active Allocations</h3>
+                <p class="stat-number" id="activeStat">0</p>
+            </div>
+            <div class="card">
+                <h3>Returned Books</h3>
+                <p class="stat-number" id="returnedStat">0</p>
+            </div>
+            <div class="card">
+                <h3>Overdue Books</h3>
+                <p class="stat-number" id="overdueStat">0</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Akash Library Management System. All rights reserved.</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
